@@ -1,4 +1,55 @@
 .wrapper {
-    display: flex;
-    background-color:#eeeeee;
+    /* display: flex; */
+    background-color: #eeeeee;
+}
+
+.removeDataHomePage,
+.changeDataHomePage {
+    padding: 25px;
+    border: none;
+    border-radius: 5%;
+    margin: 5px;
+    font-size: 1.25em;
+    color: white;
+
+}
+
+.removeDataHomePage:hover,
+.changeDataHomePage:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.removeDataHomePage:active,
+.changeDataHomePage:active {
+    opacity: 0.9;
+    /* box-shadow: none; */
+
+}
+
+.removeDataHomePage:active {
+    box-shadow: -0px -1px 10px rgba(155, 0, 0, 0.9);
+
+}
+
+.changeDataHomePage:active {
+    box-shadow: -0px -1px 10px rgba(0, 0, 155, 0.9);
+
+}
+
+.removeDataHomePage {
+    background-color: red;
+    box-shadow: 1px 5px 5px rgba(155, 0, 0, 0.9);
+
+
+
+}
+
+
+
+
+.changeDataHomePage {
+    background-color: blue;
+    box-shadow: 1px 5px 5px rgba(0, 0, 155, 0.9);
+
 }
