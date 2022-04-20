@@ -1,0 +1,19 @@
+1, check reRender function 
+2. take one function and đối số
+3. nếu đối số thay đổi thì rerender lại function, 
+Không thì ngay cả component render nó cũng ko render lại function ấy
+
+4. useMemo is caching (cache ghi vào bộ nhớ) 
+
+
+const memoFunction = (value) => {
+    console.log(value);
+    return value;
+}
+
+const memo = useMemo(() => memoFunction(name), [name,age])
+
+
+
+
+// đối số = dependencies

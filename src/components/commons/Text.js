@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+
+
 const Text = () => {
     // hook //khai báo state
     const [name, setName] = useState('Tuan')
@@ -21,6 +23,11 @@ const Text = () => {
             setName("TuanTuan")
         }, 3000)
     }
+
+    // always be rendered()
+    const hello = () => {
+        console.log("function hello")
+    } 
 
     return (
         <div>

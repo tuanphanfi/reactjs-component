@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import ListPage from "./untils/ListPage"
+import 'bootstrap/dist/css/bootstrap.min.css';
 const container = document.getElementById("root");
 const root = createRoot(container);
-
-root.render(<App tab="home"/>)
+// root.render(<App tab="home" />)
+root.render(<ListPage tab="list" />)
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
