@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 
 import { Table } from 'react-bootstrap'
 import axios from 'axios';
+import serviceApi from '../../untils/serviceApi'
 
 const ListPage = () => {
     const [loading, setLoading] = useState(true)
@@ -34,7 +35,7 @@ const ListPage = () => {
 
     const renderItem = () => {
         const res = data.map((element, index) => {
-            <tr>
+            <tr key={index}>
                 <td>{element.id}</td>
                 <td>{element.name}</td>
                 <td>{element.avatar}</td>

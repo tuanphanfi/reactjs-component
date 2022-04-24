@@ -1,0 +1,5 @@
+trả về 1 function
+
+-useMemo avoids heavy logic - return value
+-useCallback focus on the performance, when callback function is created 
+in functional component pass 

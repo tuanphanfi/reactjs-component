@@ -1,17 +1,25 @@
+/* wrapper pt-4 */
 .wrapper {
     /* display: flex; */
     background-color: #eeeeee;
+
 }
+
+.wrapper form input {
+    /* margin:  */
+}
+
+/* buttons-homepage */
+
 
 .removeDataHomePage,
 .changeDataHomePage {
-    padding: 25px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5%;
     margin: 5px;
-    font-size: 1.25em;
+    font-size: 1.05em;
     color: white;
-
 }
 
 .removeDataHomePage:hover,
@@ -24,12 +32,10 @@
 .changeDataHomePage:active {
     opacity: 0.9;
     /* box-shadow: none; */
-
 }
 
 .removeDataHomePage:active {
-    box-shadow: -0px -1px 10px rgba(155, 0, 0, 0.9);
-
+    box-shadow: -0px -1px 10px rgba(155, 10, 10, 0.9);
 }
 
 .changeDataHomePage:active {
@@ -38,11 +44,8 @@
 }
 
 .removeDataHomePage {
-    background-color: red;
-    box-shadow: 1px 5px 5px rgba(155, 0, 0, 0.9);
-
-
-
+    background-color: rgba(180,20,20,1);
+    box-shadow: 1px 5px 5px rgba(155, 10, 10, 0.9);
 }
 
 
