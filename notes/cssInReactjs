@@ -1,0 +1,12 @@
+1. css nhu binh thuong
+
+2.{/* incline css */ }
+
+3.``````````styled component <===== xu hướng
+dùng trong Material UI
+nhiều tùy biến, giữ lại đc phần chung 
+scale rất lớn
+
+
+4.````````CSS module <==== không bị ảnh hưởng người khác
+không sợ bị trùng tên

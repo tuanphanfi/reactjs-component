@@ -44,7 +44,7 @@
 }
 
 .removeDataHomePage {
-    background-color: rgba(180,20,20,1);
+    background-color: rgba(180, 20, 20, 1);
     box-shadow: 1px 5px 5px rgba(155, 10, 10, 0.9);
 }
 
@@ -55,4 +55,11 @@
     background-color: blue;
     box-shadow: 1px 5px 5px rgba(0, 0, 155, 0.9);
 
+}
+
+
+/* listPage */
+.list-page-name {
+    color: greenyellow;
+    font-weight: bold;
 }

@@ -8,6 +8,7 @@ import useCalculate from '../../untils/useCalculate'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup';
+import styled from "styled-components"
 
 const schema = yup.object().shape({
     name: yup.string().required("Name should be required please").min(2).max(18),
@@ -16,6 +17,14 @@ const schema = yup.object().shape({
     password: yup.string().min(4).max(15).required(),
     confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
 })
+
+const Title = styled.h1`
+    font-size: 14px;
+    color: ${props => props.primary ? props.primary : "red"};
+    background: ${(props) => (props.bg ? props.bg : "black")}
+    /* color: ${props => props.primary ? "white" : "palevioletred"}; */
+`
+
 
 const HomePage = () => {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm({
@@ -71,8 +80,12 @@ const HomePage = () => {
     return (
         <div className="container-fluid text-center m-0 p-0">
             <div className="wrapper pt-4">
+                <Title primary="blue">Form</Title>
+                <Title primary="blue">Form</Title>
+                <Title>Form</Title>
                 <form action="" onSubmit={handleSubmit(submitForm)}>
                     <input
+                        style={{ marginBottom: "2rem", paddingTop: "2rem" }}
                         className=""
                         type="text"
                         name="name"
@@ -84,6 +97,7 @@ const HomePage = () => {
                     <p className="text-danger">{errors.name?.message}</p>
 
                     <input
+
                         className="m-1"
                         type="number"
                         name="age"
@@ -100,7 +114,7 @@ const HomePage = () => {
                     {/* {errors.age && <span>This field is required</span>} */}
 
                 </form>
-
+                <Button />
                 {/* <h1>{loading}</h1> */}
                 {/* loading */}
                 {loading ? (
@@ -117,5 +131,6 @@ const HomePage = () => {
         </div>
     );
 };
+
 
 export default HomePage;

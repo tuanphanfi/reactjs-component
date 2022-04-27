@@ -1,8 +1,23 @@
+// 1 tạo file css DONE
+// 2 inline css DONE
+// 3 styled component
+// 4 module css
+
 import React, { useState, useEffect, useMemo } from 'react';
 
 import { Table } from 'react-bootstrap'
 import axios from 'axios';
 import serviceApi from '../../untils/serviceApi'
+import styled from "styled-components"
+import styles from './listPage.module.css';
+
+const TableHeader = styled.th`
+    font-size: 14px;
+    color:      ${props => props.primary ? props.primary : "red"};
+    background-color: ${props => props.bg ? props.bg : "black"};
+    
+    /* color: ${props => props.primary ? "white" : "palevioletred"}; */
+`
 
 const ListPage = () => {
     const [loading, setLoading] = useState(true)
@@ -14,8 +29,10 @@ const ListPage = () => {
     const callApi = async () => {
         try {
             const result = await axios.get(
-                "https://624061412aeb48a9af735b00.mockapi.io/api/v1/users?page=1&limit=10"
+                "https://62405d822aeb48a9af733b3e.mockapi.io/users?page=1&limit=10"
             )
+
+            // https://62405d822aeb48a9af733b3e.mockapi.io/:endpoint
             console.log("result", result)
             console.log("result.data", result.data)
             setLoading(false)
@@ -37,7 +54,7 @@ const ListPage = () => {
         const res = data.map((element, index) => {
             <tr key={index}>
                 <td>{element.id}</td>
-                <td>{element.name}</td>
+                <td >{element.name}</td>
                 <td>{element.avatar}</td>
                 <td><img src={element.avatar} width="50" /></td>
                 <td>{element.createdAt}</td>
@@ -56,10 +73,10 @@ const ListPage = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Avatar</th>
-                            <th scope="col">createdAt</th>
+                            <TableHeader bg="black" primary="brown" scope="col">ID</TableHeader>
+                            <TableHeader scope="col">Name</TableHeader>
+                            <TableHeader scope="col">Avatar</TableHeader>
+                            <TableHeader scope="col">createdAt</TableHeader>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,11 +85,12 @@ const ListPage = () => {
                                 return (
                                     <tr>
                                         <td>{element.id}</td>
-                                        <td>{element.name}</td>
-                                        <td>{element.avatar}</td>
-                                        <td><img src={element.avatar} width="50" /></td>
+                                        <td className="list-page-name">{element.name}</td>
+                                        {/* <td>{element.avatar}</td> */}
+                                        {/* <td><img src={element.avatar} width="50" /></td> */}
+                                        <td><img style={{ width: "120px" }} src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/274118211_1891069687950438_6236156530526191977_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_ohc=uJUKhIfZHCQAX_Iv9sY&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT-oFQ_SSEeABVfI8f_eWkzx9kXw5dUX_GTY_JtG-zeVPQ&oe=6269B8AB" width="50" /></td>
                                         <td>{element.createdAt}</td>
-                                        <td><button onClick={() => deleteItem(index)}>Delete</button></td>
+                                        <td><button className={styles.btn} onClick={() => deleteItem(index)}>Delete</button></td>
                                     </tr>
                                 )
                             })
@@ -82,7 +100,7 @@ const ListPage = () => {
                 </table>
             )
             }
-        </div>
+        </div >
 
     );
 };
